@@ -42,7 +42,7 @@ class AGCL:
         for h in range(0, pady * 2 + 1, di_y):
             for w in range(0, padx * 2 + 1, di_x):
                 right_crop = right_pad[:, :, h : h + H, w : w + W]
-                assert right_crop.shape == left_feature.shape
+                # assert right_crop.shape == left_feature.shape
                 corr = F.mean(left_feature * right_crop, axis=1, keepdims=True)
                 corr_list.append(corr)
 
