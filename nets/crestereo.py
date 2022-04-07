@@ -2,6 +2,7 @@ import megengine.module as M
 import megengine.functional as F
 from megengine import amp
 
+
 from .update import BasicUpdateBlock
 from .extractor import BasicEncoder
 from .corr import AGCL
@@ -94,9 +95,8 @@ class CREStereo(M.Module):
         return zero_flow
 
     def forward(self, image1, image2, iters=10, flow_init=None):
-
-        image1 = 2 * (image1 / 255.0) - 1.0
-        image2 = 2 * (image2 / 255.0) - 1.0
+        # image1 = 2 * (image1 / 255.0) - 1.0
+        # image2 = 2 * (image2 / 255.0) - 1.0
 
         hdim = self.hidden_dim
         cdim = self.context_dim
